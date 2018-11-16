@@ -1,6 +1,6 @@
 package RemoteServer.Connection.Server;
 
-import RemoteServer.Model.Message;
+import RemoteServer.Model.Request;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -26,10 +26,10 @@ public class Server extends Thread {
 
         try {
 
-                Message remote = null;
+                Request remote = null;
 
                 try {
-                    remote = (Message) in.readObject();
+                    remote = (Request) in.readObject();
                     System.out.println(remote.toString());
 
                 } catch(IOException ex){ ex.printStackTrace();

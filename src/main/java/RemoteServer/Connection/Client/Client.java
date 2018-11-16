@@ -1,6 +1,6 @@
 package RemoteServer.Connection.Client;
 
-import RemoteServer.Model.Message;
+import RemoteServer.Model.Request;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -47,14 +47,14 @@ public class Client  {
     }
 
 
-    public void send(byte request){
+    public void send(Request request){
 
         establishContact();
 
-        Message message = new Message(request);
+
 
         try {
-            out.writeObject(message);
+            out.writeObject(request);
 
         } catch(IOException ex){
             ex.printStackTrace();
