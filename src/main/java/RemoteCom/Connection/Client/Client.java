@@ -1,10 +1,11 @@
-package RemoteServer.Connection.Client;
+package RemoteCom.Connection.Client;
 
-import RemoteServer.Model.Request;
+import RemoteCom.Model.Request;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -24,8 +25,8 @@ public class Client  {
 
     private void establishContact() {
         try {
-            socket = new Socket("194.47.41.173", 12345);
-            //socket = new Socket(InetAddress.getLocalHost(), 12345);
+           // socket = new Socket("194.47.41.173", 12345);
+            socket = new Socket(InetAddress.getLocalHost(), 12345);
             out = new ObjectOutputStream(socket.getOutputStream());
             //in = new ObjectInputStream(socket.getInputStream());
         } catch (UnknownHostException e) {
@@ -47,14 +48,14 @@ public class Client  {
     }
 
 
-    public void send(Request request){
+    public void send(Request message){
 
         establishContact();
 
 
 
         try {
-            out.writeObject(request);
+            out.writeObject(message);
 
         } catch(IOException ex){
             ex.printStackTrace();

@@ -1,6 +1,7 @@
-package RemoteServer.Connection.Server;
+package RemoteCom.Connection.Server;
 
-import RemoteServer.Model.Request;
+import RemoteCom.HandleRequest;
+import RemoteCom.Model.Request;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -26,11 +27,16 @@ public class Server extends Thread {
 
         try {
 
+            HandleRequest handle = new HandleRequest();
+
                 Request remote = null;
 
                 try {
                     remote = (Request) in.readObject();
                     System.out.println(remote.toString());
+
+                    handle.handle(remote);
+                    handle.writeToLogFile(remote);
 
                 } catch(IOException ex){ ex.printStackTrace();
                 }
