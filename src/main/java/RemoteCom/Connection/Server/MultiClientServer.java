@@ -13,7 +13,7 @@ public class MultiClientServer extends Thread {
         try {
             serverSocket = new ServerSocket(5001);
         } catch (IOException e) {
-            System.out.println("Could not listen on port: 2345");
+            System.out.println("Could not listen on port: 5001");
             System.exit(-1);
         }
         Socket clientSocket = null;
@@ -23,7 +23,7 @@ public class MultiClientServer extends Thread {
                 Server server = new Server(clientSocket);
                 server.start();
             } catch (IOException e) {
-                System.out.println("Accept failed: 2345");
+                System.out.println("Accept failed: 5001");
                 System.exit(-1);
             }
         }

@@ -16,6 +16,8 @@ public class Server extends Thread {
 
     public void run() {
 
+        System.out.println("client connected");
+
         ObjectInputStream in = null;
         try {
            // out = new ObjectOutputStream(clientSocket.getOutputStream());

@@ -5,7 +5,6 @@ import RemoteCom.Model.Request;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -25,8 +24,9 @@ public class Client  {
 
     private void establishContact() {
         try {
-           // socket = new Socket("194.47.41.173", 12345);
-            socket = new Socket(InetAddress.getLocalHost(), 12345);
+            socket = new Socket("83.255.52.181", 12345);
+           // socket = new Socket("192.168.0.3", 12345);
+            //socket = new Socket(InetAddress.getLocalHost(), 12345);
             out = new ObjectOutputStream(socket.getOutputStream());
             //in = new ObjectInputStream(socket.getInputStream());
         } catch (UnknownHostException e) {
