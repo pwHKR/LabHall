@@ -17,6 +17,10 @@ public class HandleRequest {
                 handleLamp(request);
                 break;
 
+            case "tempUpdate":
+                handleTest(request);
+                break;
+
             case "fan":
 
                 break;
@@ -42,6 +46,9 @@ public class HandleRequest {
         System.out.println("Reqeust sent " + request.getTime());
         System.out.println("do something with lamp with id" + request.getDeviceId());
 
+      //  ComTalker comTalker = new ComTalker();
+        //comTalker.turnLightOff();
+
     }
 
 
@@ -49,6 +56,15 @@ public class HandleRequest {
 
         System.out.println("Reqeust sent " + request.getTime());
         System.out.println("do something with fan with id" + request.getDeviceId());
+
+    }
+
+    private void handleTest(Request request){
+
+        System.out.println("Reqeust sent " + request.getTime());
+        System.out.println("do something with request from web with id" + request.getDeviceId());
+
+
 
     }
 }

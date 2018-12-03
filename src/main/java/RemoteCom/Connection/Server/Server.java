@@ -20,7 +20,7 @@ public class Server extends Thread {
 
         ObjectInputStream in = null;
         try {
-           // out = new ObjectOutputStream(clientSocket.getOutputStream());
+
             in = new ObjectInputStream(clientSocket.getInputStream());
         } catch (IOException ioe) {
             System.out.println("Failed in creating streams");
@@ -31,18 +31,18 @@ public class Server extends Thread {
 
             HandleRequest handle = new HandleRequest();
 
-                Request remote = null;
+            Request remote = null;
 
-                try {
-                    remote = (Request) in.readObject();
-                    System.out.println(remote.toString());
+            try {
+                remote = (Request) in.readObject();
+                System.out.println(remote.toString());
 
-                    handle.handle(remote);
-                    handle.writeToLogFile(remote);
+                handle.handle(remote);
+                handle.writeToLogFile(remote);
 
-                } catch(IOException ex){ ex.printStackTrace();
-                }
-
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
 
 
         } /*catch (IOException ioe) {
@@ -53,7 +53,7 @@ public class Server extends Thread {
         }
         try {
             clientSocket.close();
-            //out.close();
+
             in.close();
         } catch (IOException ioe) {
             System.out.println("Failed in closing down");

@@ -15,8 +15,10 @@ public class Main {
 
 
 
-        Request test = new Request("dbCall",0,"1");
+        Request test = new Request("dbCall",6,"25");
         Request test2 = new Request("tempUpdate",0,"29");
+
+
 
         connection.send(test);
 
