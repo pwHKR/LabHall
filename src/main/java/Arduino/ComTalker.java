@@ -53,7 +53,7 @@ public class ComTalker {
 
 
     public ComTalker() {
-        this.comPort = SerialPort.getCommPorts()[2];
+        this.comPort = SerialPort.getCommPorts()[0];
         comPort.openPort();
     }
 
@@ -204,7 +204,7 @@ public class ComTalker {
     private int getBurglarAlarm() {
         byte[] output = {burglarAlarm, '0'};
         if (sendMessage(output)) {
-            return (byte) (getValue() - 100);
+            return (byte) (getValue());
 
         } else {
             return Byte.MIN_VALUE;
@@ -215,7 +215,7 @@ public class ComTalker {
     private int getFireAlarm() {
         byte[] output = {fireAlarm, '0'};
         if (sendMessage(output)) {
-            return (byte) (getValue() - 100);
+            return (byte) (getValue());
 
         } else {
             return Byte.MIN_VALUE;
@@ -225,7 +225,7 @@ public class ComTalker {
     private int getWaterAlarm() {
         byte[] output = {waterAlarm, '0'};
         if (sendMessage(output)) {
-            return (byte) (getValue() - 100);
+            return (byte) (getValue());
 
         } else {
             return Byte.MIN_VALUE;

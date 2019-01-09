@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="groupB.LabHall:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/groupB_LabHall_jar</output-path>
-    <root id="archive" name="groupB.LabHall.jar">
-      <element id="module-output" name="groupB.LabHall" />
-      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fazecast/jSerialComm/2.3.0/d2a706bc1be3016b9fc4a29f2035fe09db1ed6e0/jSerialComm-2.3.0.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>

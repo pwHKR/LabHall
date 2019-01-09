@@ -20,7 +20,8 @@ public class Client {
     private void establishContact() {
         try {
            socket = new Socket("83.248.250.216", 12345);
-            // socket = new Socket("192.168.0.3", 12345);
+           //socket = new Socket("194.47.40.203", 12345);
+             //socket = new Socket("192.168.0.3", 12345);
             //socket = new Socket(InetAddress.getLocalHost(), 12345);
             out = new ObjectOutputStream(socket.getOutputStream());
 

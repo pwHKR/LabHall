@@ -6,6 +6,15 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+        /*
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+*/
         MultiClientServer multiClientServer = new MultiClientServer();
         multiClientServer.start();
 
@@ -16,21 +25,17 @@ public class Main {
 
 
         Request test = new Request("dbCall",6,"25");
-        Request test2 = new Request("tempUpdate",0,"29");
+        //Request test2 = new Request("tempUpdate",0,"29");
 
 
 
         connection.send(test);
 
-        connection.send(test2);
+        //connection.send(test2);
 
 
         // Main server application needs to be executed before the labHall application starts
         // E.G Dont start this application until the Main Server application is launched
-
-
-
-
 
     }
 }

@@ -114,49 +114,100 @@ public class HandleRequest {
 
 
         if(request.getDeviceId() == 97){
-            request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.FIRE_ALARM)));
+            String arduinoValue = String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.FIRE_ALARM));
+            System.out.println("Fire alarm: " + arduinoValue);
+            //request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.FIRE_ALARM)));
             Client client  = new Client();
-            client.send(request);
+            Request mess = new Request(request.getType(),request.getDeviceId(),arduinoValue);
+            mess.setType("dbCall");
+            client.send(mess);
+            //client.send(request);
         }
         if(request.getDeviceId() == 98){
-            request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.BURGLAR_ALARM)));
+            String arduinoValue = String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.BURGLAR_ALARM));
+            System.out.println("Burgular alarm: " + arduinoValue);
+           // request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.BURGLAR_ALARM)));
             Client client  = new Client();
-            client.send(request);
+            Request mess = new Request(request.getType(),request.getDeviceId(),arduinoValue);
+            mess.setType("dbCall");
+            client.send(mess);
+            //client.send(request);
         }
         if(request.getDeviceId() == 99){
-            request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.WATER_ALARM)));
+            String arduinoValue = String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.WATER_ALARM));
+            System.out.println("Water Alarm: " + arduinoValue);
+
+            //request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.WATER_ALARM)));
             Client client  = new Client();
-            client.send(request);
+
+            Request mess = new Request(request.getType(),request.getDeviceId(),arduinoValue);
+            mess.setType("dbCall");
+            client.send(mess);
+            //client.send(request);
         }
         if(request.getDeviceId() == 100){
-            request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.INSIDE_TEMP)));
+            String arduinoValue = String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.INSIDE_TEMP));
+            System.out.println("Inside Value: " + arduinoValue);
+
+           // request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.INSIDE_TEMP)));
             Client client  = new Client();
-            client.send(request);
+
+            Request mess = new Request(request.getType(),request.getDeviceId(),arduinoValue);
+            mess.setType("dbCall");
+            client.send(mess);
+
+            //client.send(request);
         }
         if(request.getDeviceId() == 101){
-            request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.ATTIC_TEMP)));
+            String arduinoValue = String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.ATTIC_TEMP));
+
+            System.out.println("Attic value: "+arduinoValue);
             Client client  = new Client();
-            client.send(request);
+
+            Request mess = new Request(request.getType(),request.getDeviceId(),arduinoValue);
+            mess.setType("dbCall");
+            client.send(mess);
         }
         if(request.getDeviceId() == 102){
-            request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.OUTSIDE_TEMP)));
+            String arduinoValue = String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.OUTSIDE_TEMP));
+            System.out.println("Outside temp: " + arduinoValue);
+           // request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.OUTSIDE_TEMP)));
             Client client  = new Client();
-            client.send(request);
+
+            Request mess = new Request(request.getType(),request.getDeviceId(),arduinoValue);
+            mess.setType("dbCall");
+            client.send(mess);
+            //client.send(request);
         }
         if(request.getDeviceId() == 104){
-            request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.STOVE)));
+            String arduinoValue = String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.STOVE));
+            System.out.println("Stove: "+arduinoValue);
+            //request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.STOVE)));
             Client client  = new Client();
-            client.send(request);
+            Request mess = new Request(request.getType(),request.getDeviceId(),arduinoValue);
+            mess.setType("dbCall");
+            client.send(mess);
+            //client.send(request);
         }
         if(request.getDeviceId() == 105){
-            request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.WINDOW)));
+            String arduinoValue = String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.WINDOW));
+            System.out.println("Window: " + arduinoValue);
+            //request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.WINDOW)));
             Client client  = new Client();
-            client.send(request);
+            Request mess = new Request(request.getType(),request.getDeviceId(),arduinoValue);
+            mess.setType("dbCall");
+            client.send(mess);
+            //client.send(request);
         }
         if(request.getDeviceId() == 106){
-            request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.POWER)));
+            String arduinoValue = String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.POWER));
+            System.out.println("Power consumption: "+arduinoValue);
+            //request.setValue(String.valueOf(DataStorage.getInstance().getCm().getDeviceStatus(ComTalker.DEVICE.POWER)));
             Client client  = new Client();
-            client.send(request);
+            Request mess = new Request(request.getType(),request.getDeviceId(),arduinoValue);
+            mess.setType("dbCall");
+            client.send(mess);
+           // client.send(request);
         }
     }
     /**
